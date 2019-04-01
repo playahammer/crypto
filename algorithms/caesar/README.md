@@ -22,3 +22,6 @@ private key ```k``` is a confirm random integer ranging from 1 to 25;
 This encryption algorithm is implemented by C++ using Qt supporting the GUI. The main functions are ```QString encrypt(QString)``` and  ```QString decrypt(QString)```,
 which need the plaintext or ciphertext and return the cipertext or plaintext respectively. But before this, we show initialize the ```Caesar``` class pointer
 with private key constructor. More details please see the ```caesar.cpp``` and ```caesar.h```.
+
+## Test
+![Test](https://github.com/playahammer/crypto/blob/master/algorithms/caesar/test/test.png?raw=true)
