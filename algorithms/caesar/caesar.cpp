@@ -7,8 +7,10 @@ Caesar::Caesar(QString key)
 
 Caesar::~Caesar(){
     delete this->encryptedWords;
+    delete this->decryptedWords;
 }
 /**
+ * encrypt the message
  * @brief Caesar::encrypt
  * @param s
  * @return
@@ -28,6 +30,7 @@ QString Caesar::encrypt(QString s)
 }
 
 /**
+ * decrypt the message
  * @brief Caesar::decrypt
  * @param s
  * @return

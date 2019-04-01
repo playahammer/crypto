@@ -7,7 +7,7 @@
 
 
 #define GET_INDEX(x) (x == 127 ? 0 : x - 32) //split ascii console characters
-#define GET_MOD(x, k) (x - k < 0 ?  (x - k + 128) : (x - k))
+#define GET_MOD(x, k) (x - k < 0 ?  (x - k + 128) : (x - k)) //get the mod for decryption
 class Caesar
 {
 public:
