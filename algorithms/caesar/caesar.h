@@ -1,4 +1,27 @@
-﻿#ifndef CAESAR_H
+﻿/***
+ *
+ *  Copyright (c) 2019 Play a hammer && magbone
+ *
+ *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ */
+
+#ifndef CAESAR_H
 #define CAESAR_H
 
 #include <QString>
@@ -6,8 +29,7 @@
 #include <QByteArray>
 
 
-#define GET_INDEX(x) (x == 127 ? 0 : x - 32) //split ascii console characters
-#define GET_MOD(x, k) (x - k < 0 ?  (x - k + 128) : (x - k)) //get the mod for decryption
+#define GET_MOD(x, k) ((x - k - 32) % 95 < 0 ? (x - k - 32) % 95 + 95 : (x - k - 32) % 95) //get the mod for decryption
 class Caesar
 {
 public:
@@ -20,8 +42,8 @@ private:
     QString key = "";
     QString *encryptedWords;
     QString *decryptedWords;
-    const char ascii[128] = {' ','!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/'
-                            , '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ':', '<', '=', '>', '?'
+    const char ascii[95] = {' ','!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/'
+                            , '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '<', '=', '>', '?'
                             , '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O'
                             , 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '[', '\\', ']', '^', '_'
                             , '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o'
