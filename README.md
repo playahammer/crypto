@@ -5,4 +5,4 @@ Hello, this resposity help someone who wants to learn more about the cryptograph
 If you have better and more things, don't hesitate and pull a request to this reposity. Let's make a progress together.
 
 ## License
-This resposity is licensed under MIT Liscense.
+This resposity is licensed under MIT License.
