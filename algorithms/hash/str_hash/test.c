@@ -16,4 +16,6 @@ int main(int argc, char **argv)
       printf("BPHash: %d\n", bp_hash(test_str, 3));
       printf("FNVHash: %d\n", fnv_hash(test_str));
       printf("JAVAHash: %d\n", java_hash(test_str));
+      
+      return 0;
 }
